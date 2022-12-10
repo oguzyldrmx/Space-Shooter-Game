@@ -50,6 +50,18 @@ function updateFrames(){
 
 setInterval(updateFrames, 1000 / 30);
 
+//---------UPDATE PLAYER INFO -----------------
+const scoreValue = document.querySelector('.scoreValue');
+const bulletsValue = document.querySelector('.bulletsValue');
+const hpValue = document.querySelector('.hpValue');
+
+function updatePlayerInfo(){
+    scoreValue.innerText = player.score;
+    bulletsValue.innerText = player.bullets;
+    hpValue.innerText = player.hp;
+}
+
+
 function game(){
     update();
     render();
@@ -65,6 +77,7 @@ function playerMove(){
 }
 function update(){
     playerMove();
+    updatePlayerInfo();
 }
 function render(){
 
